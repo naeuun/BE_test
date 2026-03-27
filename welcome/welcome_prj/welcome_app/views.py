@@ -3,7 +3,6 @@ from django.shortcuts import render
 # Create your views here.
 
 def index(request):
-    
     return render(request,'welcome_app/index.html')
 
 def welcome(request):
@@ -13,7 +12,7 @@ def welcome(request):
     month=request.GET.get('month')
     day=request.GET.get('day')
     
-    age = 2025 - int(year) + 1
+    age = 2026 - int(year) + 1
     
     context = {
         'name':name,

@@ -11,7 +11,13 @@
     {% for lecture in lectures %}
     <li>
        [{{lecture.code}}] {{lecture.title}} - {{lecture.professor.name}}<br>
+        수강생 목록 : <br>
+       {% for student in lecture.students.all %}   
+            {{ student.student_id}} - {{ student.name }} <br>
+        {% empty %} (수강생 없음)
+        {% endfor %}
     </li>
+    <hr>
     {% empty %}
         등록된 강의가 없습니다.
     {% endfor %}

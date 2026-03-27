@@ -11,9 +11,11 @@ def professor_list(request):
 
 def lecture(request):
     lectures = Lecture.objects.all()
-    return render(request, 'lecture/lecture_list.html', {'lectures':lectures})
+    students = Student.objects.all()
+    return render(request, 'lecture/lecture_list.html', {'lectures':lectures, 'students':students})
 
 def student(request):
     students = Student.objects.all()
-    return render(request, 'lecture/student_list.html', {'students':students})
+    lectures = Lecture.objects.all()
+    return render(request, 'lecture/student_list.html', {'students':students, 'lectures':lectures})
     
